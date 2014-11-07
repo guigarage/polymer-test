@@ -1,0 +1,27 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<!-- Define element -->
+<polymer-element name="lorem-ipsum" attributes="paragraphs">
+    <template>
+        <div id="wrapper"></div>
+    </template>
+    <script>
+        Polymer({
+            paragraphs: 1,
+            domReady: function() {
+                for (i = 0; i < this.paragraphs; i++) {
+                    var para = document.createElement("p");
+                    var node = document.createTextNode("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.");
+                    para.appendChild(node);
+                    this.$.wrapper.appendChild(para);
+                }
+            }
+        });
+    </script>
+
+    <style>
+        p {
+            color: red;
+        }
+    </style>
+</polymer-element>
